@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gainsboro;
+}
+
+.logo h2{
+    margin-left: 100px;
+    color: rgb(7, 1, 14);
+}
+
+.navbar a{
+    margin-right: 100px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}

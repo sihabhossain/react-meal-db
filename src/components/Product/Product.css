@@ -1,0 +1,22 @@
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px;
+}
+
+.product img{
+    width: 200px;
+}
+
+.product{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: antiquewhite;
+    height: 450px;
+    width: 200px;
+}
+
+.product:hover{
+    background-color: rosybrown;
+}
