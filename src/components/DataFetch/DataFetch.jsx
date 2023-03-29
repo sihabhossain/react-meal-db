@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./DataFetch.css";
 
 const DataFetch = () => {
   const [meals, setMeals] = useState([]);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
       .then((res) => res.json())
@@ -11,7 +13,10 @@ const DataFetch = () => {
   }, []);
 
   const HandleAddToCart = (meal) => {
-    console.log(meal);
+    const newCart = [...cart, meal];
+
+    setCart(newCart);
+    // console.log(cart);
   };
 
   return (
@@ -27,6 +32,8 @@ const DataFetch = () => {
       </div>
       <div className="cart-container">
         <h3>Order summary</h3>
+        <p>items:{cart.length}</p>
+        <Cart addFoodName={addFoodName}></Cart>
       </div>
     </div>
   );
