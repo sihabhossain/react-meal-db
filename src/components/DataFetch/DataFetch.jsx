@@ -10,11 +10,19 @@ const DataFetch = () => {
       .then((data) => setMeals(data.meals));
   }, []);
 
+  const HandleAddToCart = (meal) => {
+    console.log(meal);
+  };
+
   return (
     <div className="shop-container">
       <div className="product-container">
         {meals.map((meal) => (
-          <Product key={meal.idMeal} meal={meal}></Product>
+          <Product
+            key={meal.idMeal}
+            meal={meal}
+            HandleAddToCart={HandleAddToCart}
+          ></Product>
         ))}
       </div>
       <div className="cart-container">
